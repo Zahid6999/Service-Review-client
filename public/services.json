@@ -1,0 +1,81 @@
+[
+    {
+        "name": "Carpets cleaning",
+        "img": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "service_id": "01",
+        "title": "First Thing’s First: Tidy Up The Vehicle and Prepare It For Cleaning The carpets in your car are the single most abused item in the entire vehicle that may be forgotten during a carwash. ",
+        "price": "20.00", 
+        "facility": [
+            {
+                "name": "Factory New (w/ Secrets)",
+                "details": "They are constantly hammered by mud, dirt, sand, sticks and stones that you bring in with your shoes. On top of that we can frequently drop food and spill coffee and beverages while on the road. A torn door seal will introduce rain water and grow some disgusting mould and mildew. "
+            }
+        ]
+    },
+    {
+        "name": "covid-19 cleaning",
+        "img": "https://cdn2.lamag.com/wp-content/uploads/sites/6/2020/06/deep-cleaning-covid-19-getty-images-1068x716.jpg",
+        "service_id": "02",
+        "title": "Your health is important to us. We're taking steps to protect the campus community from the spread of COVID-19. Our cleaning products and procedures have proven effective in mitigating the spread of common bacteria and viruses on campus through surface contamination. We have reviewed our protocols to verify that they comply with CDC guidance related to COVID-19. ",
+        "price": "39.00", 
+        "facility": [
+            {
+                "name": "Cleaning Schedule",
+                "details": "Clean/disinfect public areas: restrooms, locker rooms, lobbies, lounges, break rooms, hallways, conference rooms, library sitting areas, main stairwells. Clean/disinfect high-touch points. Clean/disinfect classrooms, lecture halls and laboratories "
+            }
+        ]
+    },
+    {
+        "name": "kitchen Cleaning",
+        "img": "https://media.istockphoto.com/id/1137069388/photo/woman-cleaning-kitchen-counter.jpg?s=612x612&w=0&k=20&c=j9lg5d45Et9i2Nj7KmlPxpwxtPVVskt1sQeX2THgcsE=",
+        "service_id": "03",
+        "title": "The Only Kitchen Cleaning Checklist You’ll Ever Need The ultimate guide to cleaning all the kitchen things, and then some. The kitchen has a lot going on. There are your basic walls, floor and sink area—plus a million different appliances and multiple potentially stinky drains to combat. Ugh, and the entire stove region, including the burners and the backsplash.",
+        "price": "29.00", 
+        "facility": [
+            {
+                "name": "Kitchen cleaning tools",
+                "details": "Dish soap we prefer Dawn Soft sponge or scrub brush Multipurpose cleaner Baking soda for tough stains, weird smells and burnt-on messes (and everything in between) White vinegar Swiffer Swiffer Dusters Heavy Duty Super Extender  Mr. Clean Magic Eraser (for stubborn spots, scuffs, smudges and stains)"
+            }
+        ]
+    },
+    {
+        "name": "Office Cleaning",
+        "img": "https://focuscleaning.ca/wp-content/uploads/2021/01/commercial-janitorial-services-etobicoke.png",
+        "service_id": "04",
+        "title": "If you run an office, you want to make sure it stays clean, neat, and organized so it facilitates productivity as much as possible. You also want to ensure that you provide an enjoyable and healthy work environment for employees, and one that helps keep morale high and encouraged.",
+        "price": "19.00", 
+        "facility": [
+            {
+                "name": "Office Cleaning",
+                "details": "Clean computer screens and dust keyboards. Recycle paper and empty trash cans. Vacuum floors around and under desks and tables. Clean the windows in offices. Disinfect the surfaces that people touch: phones, lamps, keyboards, fax machines, copiers, staplers, and more."
+            }
+        ]
+    },
+    {
+        "name": "Window cleaning",
+        "img": "https://architecturesideas.com/wp-content/uploads/2020/10/window-cleaning.jpeg",
+        "service_id": "05",
+        "title": "Window Cleaning is the procedure of washing or cleaning glass windows and surfaces to remove dust, dirt and other substances. For best results, this process should be performed by applying a detergent to the glass with an Applicator and then removing the detergent and drying the glass with a Squeegee.",
+        "price": "27.00", 
+        "facility": [
+            {
+                "name": "Window cleaning",
+                "details": "In recent times, Waterfed Poles (see right) have been introduced to the market and offer a highly effective way of cleaning external glass surfaces particular those above ground level.  We will cover the different cleaning methods in later posts."
+            }
+        ]
+    },
+    {
+        "name": "House cleaning",
+        "img": "https://static01.nyt.com/images/2020/03/20/opinion/20Land/20Land-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        "service_id": "06",
+        "title": "Are you sick of cleaning your house? Do you hate to return home to a dirty house after a long day at work? If so, it might be time to hire a professional cleaner. Cleaners can do all the heavy-duty cleaning that most people don't have time for. But what services do cleaners offer? Let's break down some of the most common service options.",
+        "price": "30.00", 
+        "facility": [
+            {
+                "name": "House cleaning",
+                "details": "Deep cleaning focuses heavily on the bathroom and kitchen areas. This type of cleaning is different from standard home cleans because the home cleaner focuses on getting rid of grime and dirt in hard-to-reach places like under sinks, behind bookshelves, or inside cabinets."
+            }
+        ]
+    }
+   
+]

@@ -9,7 +9,7 @@ const Banner = () => {
         <div className="carousel w-full mt-10 mb-20">
             <div id="slide1" className="carousel-item relative w-full">
                 <div className='img-gradient'>
-                    <img src={img3} alt="/" className='w-full rounded-xl ' />
+                    <img src={img3} alt="/" className='w-full rounded-xl  ' />
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-3 lg:left-28 top-2/3">
                     <h1 className='text-2xl lg:text-6xl font-bold text-white'>Certified <br /> &  <br /> <span className='text-orange-500'>Experienced <br /> Cleaners</span></h1>
