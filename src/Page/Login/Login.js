@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import login from '../../access-11/login-2.svg'
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { createUser } = useContext(AuthContext)
+
+    const handleFormLogin = (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error(err))
+    }
     return (
 
-        <form className="hero min-h-screen bg-stone-400 rounded-lg my-10">
+        <div className="hero min-h-screen bg-stone-400 rounded-lg my-10">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="mr-20">
                     <img src={login} alt="" />
                 </div>
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-zinc-300">
+                <form onSubmit={handleFormLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-zinc-300">
                     <h1 className='text-center text-2xl font-semibold text-orange-500 py-4'>Login</h1>
                     <div className="card-body">
                         <div className="form-control">
@@ -38,9 +55,9 @@ const Login = () => {
                             <button className='text-3xl mx-auto'><FcGoogle /></button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
 
     );
 };

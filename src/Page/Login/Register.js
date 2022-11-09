@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import login from '../../access-11/login-2.svg'
 
+
 const Register = () => {
+
     const handleForm = (event) => {
         event.preventDefault();
 
@@ -11,6 +13,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
+
         console.log(email, password, confirm);
 
     }
