@@ -8,6 +8,7 @@ import Home from '../Page/Home/Home/Home';
 import Login from '../Page/Login/Login';
 import Register from '../Page/Login/Register';
 import Orders from '../Page/Orders/Orders';
+import PrivateRouter from './PrivateRouter/PrivateRouter';
 
 
 
@@ -35,11 +36,11 @@ export const router = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <CheckOut></CheckOut>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://assinment-11-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/orders',
-                element: <Orders></Orders>
+                element: <PrivateRouter> <Orders></Orders></PrivateRouter>
             }
 
         ]

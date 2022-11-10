@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import OrderRow from './OrderRow';
 
@@ -7,15 +8,16 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://assinment-11-server.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
 
+    // HandelDelete -------
     const handleDelete = _id => {
         const proceed = window.confirm('are you sure this order item is cancel')
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://assinment-11-server.vercel.app/orders/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -30,6 +32,30 @@ const Orders = () => {
         }
 
     }
+    // update--------
+    const handleUpdate = _id => {
+        fetch(`https://assinment-11-server.vercel.app/orders/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ status: 'Approved' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = orders.filter(ord => ord._id !== _id);
+                    const approving = orders.find(ord => ord._id === _id);
+                    approving.status = 'approvedeeee';
+
+                    const newOrder = [approving, ...remaining];
+                    setOrders(newOrder)
+
+                }
+            })
+
+    }
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -37,13 +63,11 @@ const Orders = () => {
                 <thead>
                     <tr>
                         <th>
-                            <label>
-                                <button className='btn btn-warning text-red-500'>X</button>
-                            </label>
+
                         </th>
                         <th>Name</th>
                         <th>Job</th>
-                        <th>Favorite Color</th>
+                        <th>Update</th>
                         <th>Message</th>
                     </tr>
                 </thead>
@@ -51,7 +75,7 @@ const Orders = () => {
                 <tbody>
 
                     {
-                        orders.map(order => <OrderRow key={order._id} order={order} handleDelete={handleDelete}></OrderRow>)
+                        orders.map(order => <OrderRow key={order._id} order={order} handleDelete={handleDelete} handleUpdate={handleUpdate}></OrderRow>)
                     }
 
                 </tbody>

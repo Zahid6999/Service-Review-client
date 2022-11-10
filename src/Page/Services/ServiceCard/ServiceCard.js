@@ -8,6 +8,7 @@ const ServiceCard = (props) => {
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl p-3">
+
                 <figure><img className='h-96' src={img} alt="Clean" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

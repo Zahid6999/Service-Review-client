@@ -1,11 +1,16 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../access-11/login-2.svg'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+
+
     const { googleSignIn, signIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
 
@@ -16,6 +21,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         form.reset()
+        navigate(from, { replace: true })
 
 
         //   singIn -----------

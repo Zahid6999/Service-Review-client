@@ -32,6 +32,7 @@ const Header = () => {
                             </ul>
                         </li>
                         <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/orders">My Review</Link></li>
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost normal-case text-xl w-28 h-28 lg:w-52 lg:h-28">
@@ -47,11 +48,12 @@ const Header = () => {
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </Link>
                         <ul className="p-2">
-                            <li className='text-base'><Link to="/">Item 1</Link></li>
-                            <li className='text-base'><Link to="/">Item 2</Link></li>
+                            <li className='text-base'><Link to="/">Service 1</Link></li>
+                            <li className='text-base'><Link to="/">Service 2</Link></li>
                         </ul>
                     </li>
                     <li className='text-xl'><Link to="/blog">Blog</Link></li>
+                    <li><Link to="/orders">My Review</Link></li>
                 </ul>
             </div>
             <button className="btn btn-ghost btn-circle">

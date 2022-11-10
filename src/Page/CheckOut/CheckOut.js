@@ -31,7 +31,7 @@ const CheckOut = () => {
             orderName: orderName
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://assinment-11-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
