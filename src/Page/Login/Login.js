@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
@@ -5,7 +6,8 @@ import login from '../../access-11/login-2.svg'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { createUser } = useContext(AuthContext)
+    const { googleSignIn, signIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleFormLogin = (event) => {
         event.preventDefault();
@@ -13,13 +15,26 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        form.reset()
 
-        createUser(email, password)
+
+        //   singIn -----------
+        signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
             })
-            .catch(err => console.error(err))
+            .catch(error => console.error(error.message))
+
+    }
+    // Google Sing in------------
+    const googleHandler = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error('error name', err))
     }
     return (
 
@@ -52,7 +67,7 @@ const Login = () => {
 
                             <p className='text-center pt-2 text-sm'>Not a member? <Link to='/register' className='text-orange-400'>Register</Link> Now</p>
                             <p className='text-center text-sm text-slate-500 py-3 divider'>Or</p>
-                            <button className='text-3xl mx-auto'><FcGoogle /></button>
+                            <button onClick={googleHandler} className='text-3xl mx-auto'><FcGoogle /></button>
                         </div>
                     </div>
                 </form>

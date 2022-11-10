@@ -1,11 +1,14 @@
-import React, { } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import login from '../../access-11/login-2.svg'
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 
 const Register = () => {
-
+    const { createUser, googleSignIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
     const handleForm = (event) => {
         event.preventDefault();
 
@@ -13,10 +16,29 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
+        console.log(confirm);
+        form.reset();
 
-        console.log(email, password, confirm);
-
+        // create user------------
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error(err))
     }
+
+    // google sing in------
+    const googleHandler = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error('error name', err))
+    }
+
+
     return (
         <div className="hero min-h-screen bg-stone-400 rounded-lg my-10">
             <div className="hero-content flex-col lg:flex-row">
@@ -54,7 +76,7 @@ const Register = () => {
                             <input className="btn btn-active btn-accent" type="submit" value="Register" />
                             <p className='text-center pt-2 text-sm'>You have already account ? <Link to='/login' className='text-orange-400'>Login</Link> now</p>
                             <p className='text-center text-sm text-slate-500 py-3 divider'>Or</p>
-                            <button className='text-3xl mx-auto'><FcGoogle /></button>
+                            <button onClick={googleHandler} className='text-3xl mx-auto'><FcGoogle /></button>
                         </div>
                     </div>
                 </form>
